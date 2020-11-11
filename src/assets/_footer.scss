@@ -1,0 +1,22 @@
+.form-square{
+   
+
+    &.form-square-withicon{
+        position: relative;
+        padding-left: 60px;
+    }
+
+    .form-input{
+        padding:20px 0 ;
+        background-color:transparent;
+        border:none;
+        outline: none;
+    }
+    .form-square-icon-left{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+
+    }
+
+}

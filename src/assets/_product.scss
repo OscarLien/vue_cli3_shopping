@@ -1,0 +1,13 @@
+.product-sidebar .list-group-item:hover{
+    background-color: $secondary;
+    color: #ffffff;
+}
+
+.list-group .active{
+    background-color: $secondary;
+    border-color:$secondary ;
+}
+
+.card{
+    height: 420px;
+}

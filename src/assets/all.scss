@@ -1,0 +1,13 @@
+@import '~bootstrap/scss/functions';
+@import './helpers/variables';
+@import '~bootstrap/scss/bootstrap';
+
+body{
+    padding-top: 56px;
+}
+
+@import "./sidebutton";
+@import "./footer";
+@import "./home";
+@import "./product";
+@import "./Order";

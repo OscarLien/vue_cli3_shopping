@@ -1,0 +1,9 @@
+.checkStep{
+    background-color: $gray-600;
+    padding: 10px;
+    border-radius: 30px;
+    color: #fff;
+}
+.checkStep.active{
+    background-color: $primary;
+}

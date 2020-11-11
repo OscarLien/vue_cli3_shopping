@@ -1,0 +1,213 @@
+<template>
+  <div>
+    <loading :active.sync="isLoading"></loading>
+    <!--Carousel Img-->
+    <swiper ref="mySwiper" class="swiper" :options="swiperOptions">
+      <swiper-slide>
+        <div
+          class="header-main-img active bg-cover"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1594534475808-b18fc33b045e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+          "
+        ></div>
+      </swiper-slide>
+      <swiper-slide
+        ><div
+          class="header-main-img bg-cover"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1509941943102-10c232535736?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+          "
+        ></div
+      ></swiper-slide>
+      <swiper-slide>
+        <div
+          class="header-main-img bg-cover"
+          style="
+            background-image: url(https://images.unsplash.com/photo-1591352254932-6d56d9fe295b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
+          "
+        ></div
+      ></swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
+
+    <section>
+      <div class="container my-5">
+        <div class="row my-5">
+          <div class="col-md-6">
+            <h2 class="feature-heading">為甚麼要戴手錶</h2>
+            <p class="feature-text">
+              戴手錶的本意就是為了隨時了解時間，雖然現在手機十分普及了，很多人因此放棄了手錶，但是相比於手機，
+              手錶還是比較方便的。比如騎車的時候想了解一下時間，掏手機就沒有看手錶方便了。又或者一些不允許帶手機入場的場所，用手錶掌握時間就成了必然。
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div
+              class="bg-cover"
+              style="
+                background-image: url(https://images.unsplash.com/photo-1523268755815-fe7c372a0349?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
+                height: 500px;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="row my-5">
+          <div class="col-md-6 order-md-2">
+            <h2 class="feature-heading">彰顯身份與品位</h2>
+            <p class="feature-text">
+              腕錶是一個成功人士必不可少的裝備，它的作用不僅在於看時間，更多的是代表人的品位和個性。
+              每個職場達人都希望自己的手腕上閃爍著尊貴的光環，那份尊貴與豪華甚至讓人窒息。
+              特別是頂級的世界知名手錶品牌，能夠擁有它們是職場精英一直以來的追求。
+              同時手錶的佩戴也能體現個人品味。去打高爾夫、騎馬、保齡球的時候戴上運動風格明顯的腕錶，顯得活力十足。去陽光沙灘、香檳寶馬的時候，
+              一枚亮閃閃的休閒腕錶又幫你吸引無數比基尼美女的目光。
+            </p>
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div
+              class="bg-cover"
+              style="
+                background-image: url(https://images.unsplash.com/photo-1456444029056-7dfaeeb83a19?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80);
+                height: 500px;
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="row my-5">
+          <div class="col-md-6">
+            <h2 class="feature-heading">給人守時的良好印象</h2>
+            <p class="feature-text">
+              手錶不僅僅是來看時間的。一個人佩戴手錶，通常意味著時間觀念強、作風嚴謹。
+              而用手錶看時間是表示對客戶的尊重。再切實一點，成功的人需要抓住時機，重視自己的時間，需要時刻必爭。
+              時間是雙方約定的契約，守時代表著誠信，而且在陌生人之間迅速傳遞出你的這種品質。
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div
+              class="bg-cover"
+              style="
+                background-image: url(https://images.unsplash.com/photo-1495704907664-81f74a7efd9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+                height: 500px;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Recommend Img-->
+    <!-- <section>
+      <div class="container py-3">
+        <h3 class="text-center"><i class="far fa-thumbs-up"></i>RECOMMEND</h3>
+        <hr />
+        <div class="row">
+          <div class="col-md-6 col-12 recommend-card px-0">
+            <div
+              class="recommend-img"
+              style="
+                background-image: url(https://upload.cc/i1/2020/10/23/djGwsK.jpg);
+              "
+            >
+              <a href="" class="recommend-cover px-0">
+                <div class="recommend-btn">See More</div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 recommend-card px-0">
+            <div
+              class="recommend-img"
+              style="
+                background-image: url(https://upload.cc/i1/2020/10/23/oszAQj.jpg);
+              "
+            >
+              <a href="" class="recommend-cover">
+                <div class="recommend-btn">See More</div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 recommend-card px-0">
+            <div
+              class="recommend-img"
+              style="
+                background-image: url(https://upload.cc/i1/2020/10/23/vg34Op.jpg);
+              "
+            >
+              <a href="" class="recommend-cover">
+                <div class="recommend-btn">See More</div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-12 recommend-card px-0">
+            <div
+              class="recommend-img"
+              style="
+                background-image: url(https://upload.cc/i1/2020/10/23/lA0gz9.jpg);
+              "
+            >
+              <a href="" class="recommend-cover">
+                <div class="recommend-btn">See More</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <div class="container">
+      <h2 class="text-center py-3">推薦商品</h2>
+      <div class="row">
+        <div class="col-12">
+          <Productlist :productData="products"></Productlist>
+        </div>
+      </div>
+    </div>
+    <!--可能喜歡-->
+    <div></div>
+  </div>
+</template>
+
+<script>
+import Productlist from '@/components/frontend/Productlist.vue';
+import { mapGetters, mapActions } from 'vuex';
+// import $ from 'jquery';
+
+export default {
+  components: {
+    Productlist,
+  },
+  data() {
+    return {
+      swiperOptions: {
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      },
+    };
+  },
+  methods: {
+    ...mapActions('productsModules', ['getProducts']),
+  },
+  computed: {
+    ...mapGetters(['isLoading']),
+    ...mapGetters('productsModules', ['products', 'categories']),
+  },
+  created() {
+    this.getProducts();
+  },
+};
+</script>
+
+<style lang="scss" scoped>
+@media (min-width:62em){
+  .feature-heading {
+  margin-top: 7rem;
+}
+}
+.feature-text {
+  font-size: 1.25rem;
+}
+</style>
