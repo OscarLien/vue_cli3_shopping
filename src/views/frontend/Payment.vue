@@ -126,6 +126,7 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${vm.orderId}`;
       this.$http.post(api).then((response) => {
         if (response.data.success) {
+          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
           // console.log('完成付款', response.data);
           vm.getOrder();
         }

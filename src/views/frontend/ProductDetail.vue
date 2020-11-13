@@ -51,7 +51,7 @@
             >
               <i
                 class="fas fa-spinner fa-spin"
-                v-if="status.loadingItem === product.id"
+                v-if="addCartLoading === product.id"
               ></i>
               加入購物車
             </button>
@@ -153,6 +153,9 @@ export default {
         (item) => vm.product.category === item.category,
       );
       return sameItem;
+    },
+    addCartLoading() {
+      return this.$store.state.cartModules.cartLoading.addCartLoading;
     },
     ...mapGetters('productsModules', ['products']),
   },

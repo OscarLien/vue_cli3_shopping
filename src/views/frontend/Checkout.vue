@@ -7,14 +7,14 @@
         style="height: 350px"
         v-if="cart.total == 0"
       >
-      <div>
-        <h3>您的購物車內還沒有任何商品</h3>
-        <router-link to="/product"
-          ><button class="btn btn-outline-primary my-3">
-            <i class="fas fa-shopping-cart pr-2"></i>馬上去選購
-          </button></router-link
-        >
-      </div>
+        <div>
+          <h3>您的購物車內還沒有任何商品</h3>
+          <router-link to="/product"
+            ><button class="btn btn-outline-primary my-3">
+              <i class="fas fa-shopping-cart pr-2"></i>馬上去選購
+            </button></router-link
+          >
+        </div>
       </div>
       <div class="container pt-5" v-if="cart.total !== 0">
         <div class="row justify-content-center">
@@ -75,12 +75,12 @@
               <tfoot>
                 <tr>
                   <td colspan="3" class="text-right">總計</td>
-                  <td class="text-right">{{ cart.total| currency }}</td>
+                  <td class="text-right">{{ cart.total | currency }}</td>
                 </tr>
                 <tr v-if="cart.final_total != cart.total">
                   <td colspan="3" class="text-right text-success">折扣價</td>
                   <td class="text-right text-success">
-                    {{ cart.final_total| currency }}
+                    {{ cart.final_total | currency }}
                   </td>
                 </tr>
               </tfoot>
@@ -237,9 +237,13 @@ export default {
       const coupon = {
         code: vm.coupon_code,
       };
-      this.$http.post(api, { data: coupon }).then(() => {
-        // console.log(response.data);
-        vm.getCart();
+      this.$http.post(api, { data: coupon }).then((response) => {
+        if (response.data.success) {
+          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
+          vm.getCart();
+        } else {
+          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'danger' });
+        }
       });
     },
     createOrder() {
@@ -249,7 +253,7 @@ export default {
       vm.isLoading = true;
       this.$http.post(api, { data: order }).then((response) => {
         if (response.data.success) {
-          // console.log('訂單已建立', response.data);
+          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
           vm.$router.push(`/payment/${response.data.orderId}`);
           vm.$store.dispatch('cartModules/getCart');
           vm.isLoading = false;

@@ -8,6 +8,9 @@ export default {
     cart: {
       carts: [],
     },
+    cartLoading: {
+      addCartLoading: '',
+    },
     messages: [],
   },
   actions: {
@@ -35,9 +38,13 @@ export default {
         product_id: id,
         qty,
       };
+      context.commit('LOADING', true, { root: true });
+      context.commit('CARTLOADING', id);
       // eslint-disable-next-line no-unused-vars
       axios.post(api, { data: cart }).then((response) => {
         context.dispatch('getCart');
+        context.commit('LOADING', false, { root: true });
+        context.commit('CARTLOADING', '');
         context.dispatch('updateMessage', { message: '購物車新增成功', status: 'success' });
       });
     },
@@ -58,6 +65,9 @@ export default {
   mutations: {
     CART(state, payload) {
       state.cart = payload;
+    },
+    CARTLOADING(state, payload) {
+      state.cartLoading.addCartLoading = payload;
     },
     MESSAGES(state, { message, status, timestamp }) {
       state.messages.push({
