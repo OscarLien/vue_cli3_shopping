@@ -1,4 +1,3 @@
-/* eslint-disable func-names */
 <template>
   <div>
     <nav aria-label="Page navigation example">

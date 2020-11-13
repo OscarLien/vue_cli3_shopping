@@ -157,7 +157,6 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/orders?page=${page}`;
       vm.isLoading = true;
       this.$http.get(api).then((response) => {
-        // console.log(response.data);
         vm.order = response.data.orders;
         vm.pagination = response.data.pagination;
         vm.isLoading = false;
@@ -176,7 +175,6 @@ export default {
         vm.tempOrder = {
           user: {},
         };
-        // console.log(response.data);
         if (response.data.success) {
           $('#orderModal').modal('hide');
           vm.getOrder();

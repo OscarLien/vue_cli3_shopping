@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 <template>
   <ValidationObserver v-slot="{ handleSubmit }">
     <div>
@@ -371,7 +370,6 @@ export default {
       vm.isLoading = true;
       this.$http.get(api).then((response) => {
         vm.isLoading = false;
-        // console.log('這是取得商品列表', response.data);
         vm.products = response.data.products;
         vm.pagination = response.data.pagination;
       });

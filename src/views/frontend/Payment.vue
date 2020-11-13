@@ -118,7 +118,6 @@ export default {
       this.$http.get(api).then((response) => {
         vm.order = response.data.order;
         vm.isLoading = false;
-        // console.log('這是詳細訂單資料', response.data);
       });
     },
     payOrder() {
@@ -127,7 +126,6 @@ export default {
       this.$http.post(api).then((response) => {
         if (response.data.success) {
           vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
-          // console.log('完成付款', response.data);
           vm.getOrder();
         }
       });

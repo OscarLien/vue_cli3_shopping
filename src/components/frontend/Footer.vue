@@ -1,12 +1,12 @@
 <template>
   <div>
-   <!-- eslint-disable -->
     <!--訂閱-->
     <section class="py-5 bg-secondary">
       <div class="container">
         <div class="row justify-content-center">
           <div
-            class="col-md-5 d-flex align-items-center justify-content-md-start justify-content-center mb-4 mb-md-0"
+            class="col-md-5 d-flex align-items-center justify-content-md-start
+            justify-content-center mb-4 mb-md-0"
           >
             <span class="h4 text-white">訂閱我們取得最新商品販售資訊</span>
           </div>

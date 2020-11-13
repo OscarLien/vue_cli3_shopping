@@ -127,7 +127,6 @@ export default {
         vm.product = response.data.product;
         vm.product.num = 1;
         vm.isLoading = false;
-        // console.log('取得產品資訊', response.data);
         // vm.status.loadingItem = "";
       });
     },
