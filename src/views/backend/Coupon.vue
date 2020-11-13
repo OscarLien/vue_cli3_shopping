@@ -237,7 +237,7 @@ export default {
       vm.isLoading = true;
       this.$http.get(api).then((response) => {
         vm.isLoading = false;
-        console.log(response.data);
+        // console.log(response.data);
         vm.coupons = response.data.coupons;
       });
     },
@@ -264,7 +264,7 @@ export default {
       // vm.isLoading = true;
       this.$http[httpMethod](api, { data: vm.tempCoupon }).then((response) => {
         // vm.isLoading = false;
-        console.log(response.data);
+        // console.log(response.data);
         if (response.data.success) {
           $('#couponModal').modal('hide');
           vm.getCoupon();
@@ -281,7 +281,7 @@ export default {
       // vm.isLoading = true;
       this.$http.delete(api).then((response) => {
         // vm.isLoading = false;
-        console.log(response.data);
+        // console.log(response.data);
         if (response.data.success) {
           $('#delCouponModal').modal('hide');
           vm.getCoupon();

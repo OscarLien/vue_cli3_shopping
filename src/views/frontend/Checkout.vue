@@ -237,8 +237,8 @@ export default {
       const coupon = {
         code: vm.coupon_code,
       };
-      this.$http.post(api, { data: coupon }).then((response) => {
-        console.log(response.data);
+      this.$http.post(api, { data: coupon }).then(() => {
+        // console.log(response.data);
         vm.getCart();
       });
     },
@@ -249,7 +249,7 @@ export default {
       vm.isLoading = true;
       this.$http.post(api, { data: order }).then((response) => {
         if (response.data.success) {
-          console.log('訂單已建立', response.data);
+          // console.log('訂單已建立', response.data);
           vm.$router.push(`/payment/${response.data.orderId}`);
           vm.$store.dispatch('cartModules/getCart');
           vm.isLoading = false;

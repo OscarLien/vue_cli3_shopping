@@ -15,7 +15,7 @@ export default {
         context.commit('PRODUCTS', response.data.products);
         context.commit('CATEGORIES', response.data.products);
         context.commit('LOADING', false, { root: true });
-        console.log('取得產品列表:', response);
+        // console.log('取得產品列表:', response);
       });
     },
   },

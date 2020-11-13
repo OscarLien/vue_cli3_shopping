@@ -118,7 +118,7 @@ export default {
       this.$http.get(api).then((response) => {
         vm.order = response.data.order;
         vm.isLoading = false;
-        console.log('這是詳細訂單資料', response.data);
+        // console.log('這是詳細訂單資料', response.data);
       });
     },
     payOrder() {
@@ -126,7 +126,7 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${vm.orderId}`;
       this.$http.post(api).then((response) => {
         if (response.data.success) {
-          console.log('完成付款', response.data);
+          // console.log('完成付款', response.data);
           vm.getOrder();
         }
       });
