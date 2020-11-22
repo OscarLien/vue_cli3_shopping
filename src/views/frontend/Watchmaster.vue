@@ -3,9 +3,9 @@
     <Navbar></Navbar>
     <Alert></Alert>
     <Coupon></Coupon>
-    <!-- <div class="container px-0 px-md-0"> -->
+    <div class="container-fluid content px-0 px-md-0">
           <router-view></router-view>
-    <!-- </div> -->
+    </div>
     <Sidebutton></Sidebutton>
     <Footer></Footer>
   </div>

@@ -1,9 +1,9 @@
-@import '~bootstrap/scss/functions';
-@import './helpers/variables';
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/functions";
+@import "./helpers/variables";
+@import "~bootstrap/scss/bootstrap";
 
-body{
-    padding-top: 56px;
+body {
+  padding-top: 56px;
 }
 
 @import "./sidebutton";
@@ -11,3 +11,4 @@ body{
 @import "./home";
 @import "./product";
 @import "./Order";
+@import "./brand";

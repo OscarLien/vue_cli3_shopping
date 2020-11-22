@@ -12,7 +12,9 @@ import {
 } from 'vee-validate';
 import { required, email } from 'vee-validate/dist/rules';
 import TW from 'vee-validate/dist/locale/zh_TW.json';
+import AOS from 'aos';
 import store from './store';
+import 'aos/dist/aos.css';
 
 import App from './App.vue';
 import router from './router';
@@ -24,6 +26,7 @@ axios.defaults.withCredentials = true;
 Vue.use(VueAxios, axios);
 Vue.use(Vuex);
 Vue.use(VueAwesomeSwiper);
+AOS.init();
 
 Vue.component('Loading', Loading);
 Vue.component('ValidationProvider', ValidationProvider);

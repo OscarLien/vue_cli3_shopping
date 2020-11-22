@@ -128,15 +128,15 @@
                 rules="required"
                 v-slot="{ errors, classes }"
               >
-              <input
-                type="number"
-                class="form-control"
-                id="percent"
-                placeholder="請輸入折扣百分比"
-                v-model="tempCoupon.percent"
-                :class="classes"
-              />
-              <span class="text-danger">{{ errors[0] }}</span>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="percent"
+                  placeholder="請輸入折扣百分比"
+                  v-model="tempCoupon.percent"
+                  :class="classes"
+                />
+                <span class="text-danger">{{ errors[0] }}</span>
               </ValidationProvider>
             </div>
             <div class="form-group">
@@ -232,10 +232,10 @@ export default {
   },
   methods: {
     getCoupon() {
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupons?`;
       const vm = this;
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupons?`;
       vm.isLoading = true;
-      this.$http.get(api).then((response) => {
+      vm.$http.get(api).then((response) => {
         vm.isLoading = false;
         vm.coupons = response.data.coupons;
       });
@@ -245,23 +245,22 @@ export default {
         this.tempCoupon = {};
         this.isNew = true;
       } else {
-        // eslint-disable-next-line prefer-object-spread
-        this.tempCoupon = Object.assign({}, item);
+        this.tempCoupon = { ...item };
         this.isNew = false;
       }
 
       $('#couponModal').modal('show');
     },
     updateCoupon() {
-      let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon`;
       const vm = this;
+      let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon`;
       let httpMethod = 'post';
       if (!vm.isNew) {
         api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempCoupon.id}`;
         httpMethod = 'put';
       }
       // vm.isLoading = true;
-      this.$http[httpMethod](api, { data: vm.tempCoupon }).then((response) => {
+      vm.$http[httpMethod](api, { data: vm.tempCoupon }).then((response) => {
         // vm.isLoading = false;
         if (response.data.success) {
           $('#couponModal').modal('hide');
@@ -277,7 +276,7 @@ export default {
       const vm = this;
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupon/${vm.tempCoupon.id}`;
       // vm.isLoading = true;
-      this.$http.delete(api).then((response) => {
+      vm.$http.delete(api).then((response) => {
         // vm.isLoading = false;
         if (response.data.success) {
           $('#delCouponModal').modal('hide');

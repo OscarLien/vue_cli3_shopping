@@ -15,10 +15,9 @@
         </div>
         <div class="col-md-6">
           <h2>{{ product.title }}</h2>
-          <!-- <img :src="product.imageUrl" alt="" class="img-fluid" /> -->
           <blockquote class="blockquote mt-3">
             <p class="mb-3">{{ product.content }}</p>
-            <footer class="blockquote-footer text-right">
+            <footer class="blockquote-footer text-left">
               {{ product.description }}
             </footer>
           </blockquote>
@@ -45,7 +44,7 @@
               <i v-else class="fas fa-heart" ></i>
             </button> -->
             <button
-              class="btn btn-outline-primary mx-2"
+              class="btn btn-outline-primary"
               @click="addtoCart(product.id, product.num)"
               v-if="product.is_enabled == 1"
             >
@@ -121,13 +120,11 @@ export default {
     getProduct(id) {
       const vm = this;
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/product/${id}`;
-      //   vm.status.loadingItem = id;
       vm.isLoading = true;
-      this.$http.get(api).then((response) => {
+      vm.$http.get(api).then((response) => {
         vm.product = response.data.product;
         vm.product.num = 1;
         vm.isLoading = false;
-        // vm.status.loadingItem = "";
       });
     },
     // favItem(id) {

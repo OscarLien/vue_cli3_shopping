@@ -6,62 +6,56 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '*',
-    redirect: '/home',
-  },
-  {
     path: '/home',
-    name: '',
-    alias: '/',
     component: () => import('@/views/frontend/Watchmaster.vue'),
     children: [
       {
-        path: '/home',
+        path: '',
         name: 'Home',
         component: () => import('@/views/frontend/WatchmasterHome.vue'),
       },
       {
-        path: 'brand',
+        path: '/brand',
         name: 'Brand',
         component: () => import('@/views/frontend/WatchmasterBrand.vue'),
       },
       {
-        path: 'brand/rolex',
+        path: '/brand/rolex',
         name: 'Rolex',
         component: () => import('@/views/frontend/Rolex.vue'),
       },
       {
-        path: 'brand/omega',
+        path: '/brand/omega',
         name: 'Omega',
         component: () => import('@/views/frontend/Omega.vue'),
       },
       {
-        path: 'brand/iwc',
+        path: '/brand/iwc',
         name: 'IWC',
         component: () => import('@/views/frontend/Iwc.vue'),
       },
       {
-        path: 'brand/gs',
+        path: '/brand/gs',
         name: 'GS',
         component: () => import('@/views/frontend/Gs.vue'),
       },
       {
-        path: 'product',
+        path: '/product',
         name: 'Product',
         component: () => import('@/views/frontend/Product.vue'),
       },
       {
-        path: 'product/:id',
+        path: '/product/:id',
         name: 'ProductDetail',
         component: () => import('@/views/frontend/ProductDetail.vue'),
       },
       {
-        path: 'checkout',
+        path: '/checkout',
         name: 'Checkout',
         component: () => import('@/views/frontend/Checkout.vue'),
       },
       {
-        path: 'payment/:id',
+        path: '/payment/:id',
         name: 'Payment',
         component: () => import('@/views/frontend/Payment.vue'),
       },
@@ -74,11 +68,10 @@ const routes = [
   },
   {
     path: '/admin',
-    name: 'Dashboard',
     component: () => import('@/views/backend/Dashboard.vue'),
     children: [
       {
-        path: 'products',
+        path: '',
         name: 'Products',
         component: () => import('@/views/backend/Products.vue'),
         meta: { requiresAuth: true },
@@ -97,14 +90,9 @@ const routes = [
       },
     ],
   },
-
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    path: '*',
+    redirect: '/home',
   },
 ];
 

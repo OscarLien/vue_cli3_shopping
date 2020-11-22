@@ -7,7 +7,7 @@
         <div class="row">
           <div class="col-md-6 col-12 recommend-card px-0">
             <div
-              class="recommend-img"
+              class="recommend-img "
               style="
                 background-image: url(https://upload.cc/i1/2020/10/23/djGwsK.jpg);
               "
@@ -40,6 +40,7 @@
           <div class="col-md-6 col-12 recommend-card px-0">
             <div
               class="recommend-img"
+
               style="
                 background-image: url(https://upload.cc/i1/2020/10/23/vg34Op.jpg);
               "
@@ -70,6 +71,8 @@
             </div>
           </div>
         </div>
+        <!-- <h3 class="text-center mt-5">品牌選擇</h3>
+        <hr> -->
       </div>
     </section>
   </div>

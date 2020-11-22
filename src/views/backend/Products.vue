@@ -365,10 +365,10 @@ export default {
   },
   methods: {
     getProducts(page = 1) {
-      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`;
       const vm = this;
+      const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`;
       vm.isLoading = true;
-      this.$http.get(api).then((response) => {
+      vm.$http.get(api).then((response) => {
         vm.isLoading = false;
         vm.products = response.data.products;
         vm.pagination = response.data.pagination;
@@ -379,22 +379,21 @@ export default {
         this.tempProduct = {};
         this.isNew = true;
       } else {
-        // eslint-disable-next-line prefer-object-spread
-        this.tempProduct = Object.assign({}, item);
+        this.tempProduct = { ...item };
         // ES6 可以將item的值寫到一個空的物件,然後避免tempProduct和item有參考的特性
         this.isNew = false;
       }
       $('#productModal').modal('show');
     },
     updateProduct() {
+      const vm = this;
       let api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product`;
       let httpMethod = 'post';
-      const vm = this;
       if (!vm.isNew) {
         api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product/${vm.tempProduct.id}`;
         httpMethod = 'put';
       }
-      this.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
+      vm.$http[httpMethod](api, { data: vm.tempProduct }).then((response) => {
         if (response.data.success) {
           $('#productModal').modal('hide');
           vm.getProducts();
@@ -406,14 +405,13 @@ export default {
     },
     openDeleteModal(item) {
       const vm = this;
-      // eslint-disable-next-line prefer-object-spread
-      vm.tempProduct = Object.assign({}, item);
+      vm.tempProduct = { ...item };
       $('#delProductModal').modal('show');
     },
     deleteProduct() {
       const vm = this;
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/product/${vm.tempProduct.id}`;
-      this.$http.delete(api).then((response) => {
+      vm.$http.delete(api).then((response) => {
         if (response.data.success) {
           $('#delProductModal').modal('hide');
           this.getProducts();
@@ -424,13 +422,13 @@ export default {
       });
     },
     uploadFile() {
-      const uploadedFile = this.$refs.files.files[0];
       const vm = this;
+      const uploadedFile = this.$refs.files.files[0];
       const formData = new FormData();
       formData.append('file-to-upload', uploadedFile); // 新增欄位 將uploadedFile上傳上去
       const url = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/upload`;
       vm.status.fileUploading = true;
-      this.$http
+      vm.$http
         .post(url, formData, {
           headers: {
             'content-Type': 'multipart/form-data',

@@ -43,11 +43,12 @@
                   @click="$router.push(`/product/${item.id}`)"
                 >
                   <div
+                  class="img-box"
                     style="
                       height: 275px;
                       background-size: cover;
                       background-position: center;
-                    "
+                      "
                     :style="{ backgroundImage: `url(${item.imageUrl})` }"
                   >
                     <span class="badge badge-secondary float-right ml-2">{{
@@ -76,7 +77,6 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-// import $ from "jquery";
 // import Pagination from '@/components/Pagination';
 export default {
   data() {
@@ -118,3 +118,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.badge{
+  border-radius:0rem 0.25rem 0rem 0.25rem;
+}
+</style>

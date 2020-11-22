@@ -25,8 +25,7 @@ export default {
     delCart(context, id) {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${id}`;
       context.commit('LOADING', true, { root: true });
-      // eslint-disable-next-line no-unused-vars
-      axios.delete(api).then((response) => {
+      axios.delete(api).then(() => {
         context.dispatch('getCart');
         context.commit('LOADING', false, { root: true });
         context.dispatch('updateMessage', { message: '商品刪除成功', status: 'danger' });
@@ -40,8 +39,7 @@ export default {
       };
       context.commit('LOADING', true, { root: true });
       context.commit('CARTLOADING', id);
-      // eslint-disable-next-line no-unused-vars
-      axios.post(api, { data: cart }).then((response) => {
+      axios.post(api, { data: cart }).then(() => {
         context.dispatch('getCart');
         context.commit('LOADING', false, { root: true });
         context.commit('CARTLOADING', '');

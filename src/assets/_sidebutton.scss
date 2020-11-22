@@ -1,52 +1,52 @@
 .fixed {
-    position: fixed;
-    right: 50px;
-    bottom: 50px;
-    z-index: 999;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  z-index: 999;
+}
+
+.btn-cart {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #6c757d;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  .fa-shopping-cart {
+    color: #04384a;
   }
-  
-  .btn-cart {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-    box-shadow: 0 0 5px #6c757d;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
-    .fa-shopping-cart{
-        color: #04384a;
-    }
-    &:hover{
-        background-color: #0b90aa ;
-        .fa-shopping-cart{
-            color: #fff;
-        }
-    }
-  
-    .badge{
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        font-size: 14px;
+  &:hover {
+    background-color: #0b90aa;
+    .fa-shopping-cart {
+      color: #fff;
     }
   }
-  .btn-heart {
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-    box-shadow: 0 0 5px #6c757d;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
-    .fa-shopping-cart{
-        color: #04384a;
-    }
-    &:hover{
-        background-color: red ;
-        .fa-heart{
-            color: #fff;
-        }
+
+  .badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    font-size: 14px;
+  }
+}
+.btn-heart {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #6c757d;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  .fa-shopping-cart {
+    color: #04384a;
+  }
+  &:hover {
+    background-color: red;
+    .fa-heart {
+      color: #fff;
     }
   }
+}

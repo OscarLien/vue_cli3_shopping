@@ -25,10 +25,11 @@
 export default {
   methods: {
     logout() {
-      const api = `${process.env.APIPATH}/logout`;
       const vm = this;
-      this.$http.post(api).then((response) => {
+      const api = `${process.env.VUE_APP_APIPATH}/logout`;
+      vm.$http.post(api).then((response) => {
         if (response.data.success) {
+          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
           vm.$router.push('/signin');
         }
       });

@@ -18,18 +18,17 @@
       </div>
       <div class="container pt-5" v-if="cart.total !== 0">
         <div class="row justify-content-center">
-          <div class="col-12 col-md-10">
-            <ul class="list-unstyled form-row justify-content-around">
-              <li class="col-12 col-md-4 mb-3">
-                <span class="checkStep active d-block text-center"
-                  >1. 填寫訂購資料</span
-                >
+          <div class="col-12 col-md-8 px-0">
+            <ul class="list-unstyled d-flex justify-content-around">
+              <li class="checkStep checkStepActive">
+                <span class=" text-center">
+                  1. 填寫訂購資料</span>
               </li>
-              <li class="col-12 col-md-4 mb-3">
-                <span class="checkStep d-block text-center">2. 付款</span>
+              <li class="checkStep">
+                <span class="text-center">2. 確認付款</span>
               </li>
-              <li class="col-12 col-md-4 mb-3">
-                <span class="checkStep d-block text-center">3. 完成</span>
+              <li class="checkStep">
+                <span class="text-center">3. 完成</span>
               </li>
             </ul>
           </div>
@@ -38,7 +37,7 @@
 
       <div class="container" v-if="cart.total !== 0">
         <div class="my-5 row justify-content-center">
-          <div class="col-12 col-md-10">
+          <div class="col-12 col-md-8">
             <h2 class="text-center mb-3">訂購資訊</h2>
             <table class="table">
               <thead>
@@ -65,7 +64,12 @@
                     </div>
                   </td>
                   <td class="align-middle">
-                    {{ item.qty }}/{{ item.product.unit }}
+                    <select name="" id="" v-model="item.qty"
+                    @change="changeQty(item.id, item.product.id, item.qty)" >
+                      <option :value="num" v-for="num in 10" :key="num">{{num}}</option>
+                    </select>
+                    {{ item.product.unit }}
+                    <!-- {{ item.qty }}/{{ item.product.unit }} -->
                   </td>
                   <td class="align-middle text-right">
                     {{ item.final_total | currency }}
@@ -104,12 +108,12 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-10 mb-5">
+          <div class="col-12 col-md-8 mb-5">
             <h2 class="text-center">填寫訂購資料</h2>
             <div class="form-row">
               <form class="col-12" @submit.prevent="handleSubmit(createOrder)">
                 <div class="form-group">
-                  <label for="email">Email</label>
+                  <label for="email">電子郵件<span class="text-danger">*必填</span></label>
                   <ValidationProvider
                     name="email"
                     rules="required"
@@ -129,7 +133,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="name">姓名</label>
+                  <label for="name">姓名<span class="text-danger">*必填</span></label>
                   <ValidationProvider
                     name="name"
                     rules="required"
@@ -149,7 +153,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="tel">電話</label>
+                  <label for="tel">電話<span class="text-danger">*必填</span></label>
                   <ValidationProvider
                     name="tel"
                     rules="required"
@@ -168,7 +172,7 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="address">地址</label>
+                  <label for="address">地址<span class="text-danger">*必填</span></label>
                   <ValidationProvider
                     name="address"
                     rules="required"
@@ -237,7 +241,7 @@ export default {
       const coupon = {
         code: vm.coupon_code,
       };
-      this.$http.post(api, { data: coupon }).then((response) => {
+      vm.$http.post(api, { data: coupon }).then((response) => {
         if (response.data.success) {
           vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
           vm.getCart();
@@ -251,7 +255,7 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/order`;
       const order = vm.form;
       vm.isLoading = true;
-      this.$http.post(api, { data: order }).then((response) => {
+      vm.$http.post(api, { data: order }).then((response) => {
         if (response.data.success) {
           vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
           vm.$router.push(`/payment/${response.data.orderId}`);
@@ -259,6 +263,19 @@ export default {
           vm.isLoading = false;
         }
       });
+    },
+    changeQty(id, productId, qty) {
+      const vm = this;
+      const addapi = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
+      const delapi = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${id}`;
+      const cart = {
+        product_id: productId,
+        qty,
+      };
+      vm.$http.all([vm.$http.delete(delapi), vm.$http.post(addapi, { data: cart })])
+        .then(vm.$http.spread(() => {
+          vm.getCart();
+        }));
     },
     ...mapActions('cartModules', ['getCart', 'delCart']),
   },

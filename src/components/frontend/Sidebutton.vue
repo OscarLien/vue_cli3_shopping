@@ -80,14 +80,14 @@
               <div class="modal-footer">
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn btn-outline-secondary"
                   data-dismiss="modal"
                 >
                   再去逛逛
                 </button>
                 <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn btn-outline-primary"
                   @click="hideCartModal"
                 >
                   結帳去

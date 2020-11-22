@@ -156,22 +156,21 @@ export default {
       const vm = this;
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/orders?page=${page}`;
       vm.isLoading = true;
-      this.$http.get(api).then((response) => {
+      vm.$http.get(api).then((response) => {
         vm.order = response.data.orders;
         vm.pagination = response.data.pagination;
         vm.isLoading = false;
       });
     },
     openModal(item) {
-      // eslint-disable-next-line prefer-object-spread
-      this.tempOrder = Object.assign({}, item);
+      this.tempOrder = { ...item };
       $('#orderModal').modal('show');
     },
     editOrder() {
       const vm = this;
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/order/${vm.tempOrder.id}`;
       vm.isLoading = true;
-      this.$http.put(api, { data: vm.tempOrder }).then((response) => {
+      vm.$http.put(api, { data: vm.tempOrder }).then((response) => {
         vm.tempOrder = {
           user: {},
         };

@@ -1,31 +1,24 @@
 <template>
   <div>
     <loading :active.sync="isLoading"></loading>
-    <div class="container pt-5">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-10">
-          <ul class="list-unstyled form-row justify-content-around">
-            <li class="col-12 col-md-4 mb-3">
-              <span class="checkStep d-block text-center">1. 填寫訂購資料</span>
-            </li>
-            <li class="col-12 col-md-4 mb-3">
-              <span
-                class="checkStep d-block text-center"
-                :class="{ active: order.is_paid == false }"
-                >2. 付款</span
-              >
-            </li>
-            <li class="col-12 col-md-4 mb-3">
-              <span
-                class="checkStep d-block text-center"
-                :class="{ active: order.is_paid == true }"
-                >3. 完成</span
-              >
-            </li>
-          </ul>
+      <div class="container pt-5" >
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-8 px-0">
+            <ul class="list-unstyled d-flex justify-content-around">
+              <li class="checkStep ">
+                <span class=" text-center">
+                  1. 填寫訂購資料</span>
+              </li>
+              <li class="checkStep" :class="{checkStepActive : order.is_paid===false}">
+                <span class="text-center">2. 確認付款</span>
+              </li>
+              <li class="checkStep" :class="{checkStepActive : order.is_paid===true}">
+                <span class="text-center">3. 完成</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
     <div class="container">
       <div class="row justify-content-center">
@@ -58,7 +51,7 @@
           <table class="table">
             <tbody>
               <tr>
-                <th width="140">Email</th>
+                <th width="140">電子郵件</th>
                 <td>{{ order.user.email }}</td>
               </tr>
               <tr>
@@ -86,9 +79,9 @@
             <button class="btn btn-outline-primary">確認付款去</button>
           </div>
         </form>
-        <div class="col-12 mb-3" v-if="order.is_paid">
+        <div class="col-12 col-md-8 mb-3" v-if="order.is_paid">
           <button
-            class="btn btn-outline-primary btn-block py-3"
+            class="btn btn-outline-primary btn-block py-2"
             @click.prevent="$router.push(`/product`)"
           >
             繼續買起來
@@ -96,10 +89,54 @@
         </div>
       </div>
     </div>
+
+    <!--Modal-->
+    <div
+      class="modal fade"
+      id="paySuccessModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">付款成功</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body text-center">
+            <span class="text-success">付款成功</span>
+            <br>
+            是否繼續前往商品頁面選購？
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              data-dismiss="modal"
+            >
+              取消
+            </button>
+            <button type="button" class="btn btn-outline-primary"
+            @click="goToProduct">前往</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import $ from 'jquery';
+
 export default {
   data() {
     return {
@@ -115,7 +152,7 @@ export default {
       const vm = this;
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/order/${vm.orderId}`;
       vm.isLoading = true;
-      this.$http.get(api).then((response) => {
+      vm.$http.get(api).then((response) => {
         vm.order = response.data.order;
         vm.isLoading = false;
       });
@@ -123,12 +160,24 @@ export default {
     payOrder() {
       const vm = this;
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/pay/${vm.orderId}`;
-      this.$http.post(api).then((response) => {
+      vm.$http.post(api).then((response) => {
         if (response.data.success) {
-          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
+          vm.$store.dispatch('cartModules/updateMessage', {
+            message: response.data.message,
+            status: 'success',
+          });
           vm.getOrder();
+          vm.paySuccess();
         }
       });
+    },
+    paySuccess() {
+      $('#paySuccessModal').modal('show');
+    },
+    goToProduct() {
+      const vm = this;
+      $('#paySuccessModal').modal('hide');
+      vm.$router.push('/product');
     },
   },
   created() {

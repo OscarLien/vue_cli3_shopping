@@ -52,11 +52,11 @@ export default {
   },
   methods: {
     signin() {
-      const api = `${process.env.VUE_APP_APIPATH}/admin/signin`;
       const vm = this;
-      this.$http.post(api, vm.user).then((response) => {
+      const api = `${process.env.VUE_APP_APIPATH}/admin/signin`;
+      vm.$http.post(api, vm.user).then((response) => {
         if (response.data.success) {
-          vm.$router.push('/admin/products');
+          vm.$router.push('/admin');
           vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
         } else {
           vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'danger' });

@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container-fluid py-0" :class="{ 'd-none': isClose }">
-      <div class="row bg-primary text-white">
-        <div class="col text-center">
+      <div class="row bg-secondary text-white">
+        <div class="col text-center py-2">
           恭喜你!! 獲得了超值的優惠券!!輸入優惠碼: coupon 即可享有30% OFF!!
         </div>
         <button class="btn text-white" @click="isClose = true">

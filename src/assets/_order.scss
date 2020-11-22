@@ -1,9 +1,13 @@
-.checkStep{
-    background-color: $gray-600;
-    padding: 10px;
-    border-radius: 30px;
-    color: #fff;
+.checkStep {
+  background-color: $gray-600;
+  border-radius: 50%;
+  color: #fff;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 120px;
 }
-.checkStep.active{
-    background-color: $primary;
+.checkStepActive{
+  background-color: $primary;
 }
