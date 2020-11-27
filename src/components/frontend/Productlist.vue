@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'swiper-example-multiple-slides-per-biew',
+  name: 'productlist',
   title: 'Multiple slides per view',
   props: ['productData'],
   data() {

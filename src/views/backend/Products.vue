@@ -117,7 +117,7 @@
                   <img
                     img="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=828346ed697837ce808cae68d3ddc3cf&auto=format&fit=crop&w=1350&q=80"
                     class="img-fluid"
-                    alt=""
+                    alt="Product Image"
                     :src="tempProduct.imageUrl"
                   />
                 </div>
@@ -369,9 +369,9 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/products?page=${page}`;
       vm.isLoading = true;
       vm.$http.get(api).then((response) => {
-        vm.isLoading = false;
         vm.products = response.data.products;
         vm.pagination = response.data.pagination;
+        vm.isLoading = false;
       });
     },
     openModal(isNew, item) {
@@ -414,7 +414,7 @@ export default {
       vm.$http.delete(api).then((response) => {
         if (response.data.success) {
           $('#delProductModal').modal('hide');
-          this.getProducts();
+          vm.getProducts();
           vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
         } else {
           vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'danger' });
@@ -436,12 +436,9 @@ export default {
         })
         .then((response) => {
           if (response.data.success) {
-            // vm.tempProduct.imageUrl = response.data.imageUrl;
-            // vm.status.fileUploading = false;
             vm.$set(vm.tempProduct, 'imageUrl', response.data.imageUrl); // set方法 雙向綁定
             vm.$store.dispatch('cartModules/updateMessage', { message: '上傳成功', status: 'success' });
           } else {
-            // this.$bus.$emit('message:push', response.data.message, 'danger');
             vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'danger' });
           }
         });

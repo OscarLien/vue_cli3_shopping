@@ -1,18 +1,20 @@
 <template>
   <div>
-    <div class="container-fluid py-0" :class="{ 'd-none': isClose }">
-      <div class="row bg-secondary text-white">
-        <div class="col text-center py-2">
-          恭喜你!! 獲得了超值的優惠券!!輸入優惠碼: coupon 即可享有30% OFF!!
+    <div class="container-fluid px-0" :class="{'d-none':isClose}">
+      <div class="row bg-secondary text-center">
+        <div class="col d-flex justify-content-center align-items-center">
+          <span class="text-white"
+            >恭喜你!! 獲得了超值的優惠券!!輸入優惠碼: coupon 即可享有30%
+            OFF!!</span
+          >
         </div>
-        <button class="btn text-white" @click="isClose = true">
-          <i class="fas fa-times fa-xs"></i>
-        </button>
+          <button class="btn text-white mr-3" @click="isClose = true">
+            <i class="fas fa-times fa-xs"></i>
+          </button>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {

@@ -5,33 +5,61 @@
     <swiper ref="mySwiper" class="swiper" :options="swiperOptions">
       <swiper-slide>
         <div
-          class="header active bg-cover"
+          class="header active bg-cover justify-content-md-end align-items-md-center
+          justify-content-center align-items-end"
           style="
-            background-image: url(https://images.unsplash.com/photo-1594534475808-b18fc33b045e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80); height:550px;
+            background-image: url(https://images.unsplash.com/photo-1594534475808-b18fc33b045e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
           "
         >
-          <div class="header-button d-none d-md-block">
-            <button class="btn btn-secondary px-5 py-3"
-            @click="$router.push(`/product`)">馬上去看看</button>
+          <div class="header-button header-button1 mb-md-0">
+            <button
+              class="btn btn-secondary px-5 py-3 mb-2"
+              @click="$router.push(`/product`)"
+            >
+              馬上去看看
+            </button>
+            <p class="text-white h3">快來體驗腕表的魅力吧!</p>
           </div>
         </div>
       </swiper-slide>
       <swiper-slide
         ><div
-          class="header-main-img bg-cover"
+          class="header bg-cover justify-content-md-start align-items-md-center
+          justify-content-center align-items-end"
           style="
-            background-image: url(https://images.unsplash.com/photo-1509941943102-10c232535736?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);height:550px
+            background-image: url(https://images.unsplash.com/photo-1509941943102-10c232535736?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80);
           "
-        ></div
-      ></swiper-slide>
+        >
+          <div class="header-button header-button2 mb-md-0">
+            <button
+              class="btn btn-secondary px-5 py-3 mb-2"
+              @click="$router.push(`/product`)"
+            >
+              馬上去看看
+            </button>
+            <p class="text-white h3">還不馬上來試戴!</p>
+          </div>
+        </div></swiper-slide
+      >
       <swiper-slide>
         <div
-          class="header-main-img bg-cover"
+          class="header bg-cover justify-content-md-center align-items-md-end
+          justify-content-center align-items-end"
           style="
-            background-image: url(https://images.unsplash.com/photo-1591352254932-6d56d9fe295b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);height:550px
+            background-image: url(https://images.unsplash.com/photo-1591352254932-6d56d9fe295b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80);
           "
-        ></div
-      ></swiper-slide>
+        >
+          <div class="header-button header-button3">
+            <button
+              class="btn btn-secondary px-5 py-3 mb-2"
+              @click="$router.push(`/brand`)"
+            >
+              馬上去看看
+            </button>
+            <p class="text-white h3">來認識腕表吧!</p>
+          </div>
+        </div></swiper-slide
+      >
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
 
@@ -110,7 +138,6 @@
         </div>
       </div>
     </div>
-    <!--可能喜歡-->
     <div></div>
   </div>
 </template>
@@ -118,7 +145,6 @@
 <script>
 import Productlist from '@/components/frontend/Productlist.vue';
 import { mapGetters, mapActions } from 'vuex';
-// import $ from 'jquery';
 
 export default {
   components: {
@@ -127,7 +153,7 @@ export default {
   data() {
     return {
       swiperOptions: {
-        spaceBetween: 30,
+        spaceBetween: 10,
         centeredSlides: true,
         loop: true,
         autoplay: {
@@ -153,15 +179,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-.feature-heading {
-  margin-bottom: 3rem;
-  font-weight: 700;
-}
-
-.feature-text {
-  font-size: 1.25rem;
-  line-height: 28px;
-}
-</style>

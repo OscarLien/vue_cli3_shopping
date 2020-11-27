@@ -39,7 +39,7 @@
                 :key="item.id"
               >
                 <div
-                  class="card border-0 shadow-sm"
+                  class="product-card border-0 shadow-sm"
                   @click="$router.push(`/product/${item.id}`)"
                 >
                   <div
@@ -77,7 +77,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-// import Pagination from '@/components/Pagination';
+
 export default {
   data() {
     return {
@@ -89,15 +89,11 @@ export default {
       showPages: '',
     };
   },
-  //   components: {
-  //     Pagination: Pagination,
-  //   },
+
   methods: {
     changeCategory(item) {
       const vm = this;
       vm.category = item;
-      // vm.pagination.current_page = 1;
-      // this.getProducts();
     },
     ...mapActions('productsModules', ['getProducts']),
   },

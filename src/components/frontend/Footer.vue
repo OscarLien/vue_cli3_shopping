@@ -7,7 +7,7 @@
           <div class="row justify-content-center">
             <div
               class="col-md-5 d-flex align-items-center
-              justify-content-md-start justify-content-center mb-4 mb-md-0"
+              justify-content-md-start justify-content-center mb-4 mb-md-0 mr-auto"
             >
               <span class="h4 text-white">訂閱我們取得最新商品販售資訊</span>
             </div>
@@ -32,6 +32,14 @@
       <div class="bg-primary">
         <div class="container-fluid pt-3">
           <div class="row text-white justify-content-center">
+                        <div class="col-md-4 d-flex flex-column text-center">
+              <h5>聯絡我們</h5>
+              <ul class="list-unstyled">
+                <li><a href="tel:+" class="text-white">TEL : 0123456789</a></li>
+                <li><a href="mailto:" class="text-white">Email : watchmaster@mail.com</a></li>
+                <li>地址： 地球上的某一個角落</li>
+              </ul>
+            </div>
             <div class="col-md-4 d-flex flex-column text-center">
               <h5>Watch Master</h5>
               <p>
@@ -40,14 +48,7 @@
                 Master將店鋪擴張，且平常都有約3000支以上的款式陳列！
               </p>
             </div>
-            <div class="col-md-4 d-flex flex-column text-center">
-              <h5>聯絡我們</h5>
-              <ul class="list-unstyled">
-                <li>TEL： 12345678910</li>
-                <li>Mail： watchmaster@mail.com</li>
-                <li>地址： 地球上的某一個角落</li>
-              </ul>
-            </div>
+
             <div class="col-md-4 text-center">
               <h5 class="mb-3">關注我們</h5>
               <a href="" class="text-white "
@@ -65,10 +66,7 @@
               ></router-link>
             </div>
             <div class="col-md-12 text-center py-2">
-              僅做為個人學習使用，非商業用途。
-            </div>
-            <div class="col-md-12 text-center py-2">
-              © 2020 Watch Master* All Rights Reserved
+              僅做為個人學習使用，非商業用途。 @ 2020 Watch Master* All Rights Reserved
             </div>
           </div>
         </div>

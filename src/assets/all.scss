@@ -3,12 +3,13 @@
 @import "~bootstrap/scss/bootstrap";
 
 body {
-  padding-top: 56px;
+  padding-top: 63px;
 }
 
-@import "./sidebutton";
-@import "./footer";
-@import "./home";
-@import "./product";
-@import "./Order";
-@import "./brand";
+@import "./frontend/brand";
+@import "./frontend/footer";
+@import "./frontend/home";
+@import "./frontend/product";
+@import "./frontend/order";
+@import "./frontend/sidebutton";
+@import "./frontend/swiper";

@@ -236,8 +236,8 @@ export default {
       const api = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/admin/coupons?`;
       vm.isLoading = true;
       vm.$http.get(api).then((response) => {
-        vm.isLoading = false;
         vm.coupons = response.data.coupons;
+        vm.isLoading = false;
       });
     },
     openModal(isNew, item) {

@@ -9,6 +9,7 @@
               height: 450px;
               background-repeat: no-repeat;
               background-position: center;
+              background-size: contain;
             "
             :style="{ backgroundImage: `url(${product.imageUrl})` }"
           ></div>
@@ -113,7 +114,6 @@ export default {
       status: {
         loadingItem: '',
       },
-      // stared: JSON.parse(localStorage.getItem('stared')) || [],
     };
   },
   methods: {
@@ -127,18 +127,20 @@ export default {
         vm.isLoading = false;
       });
     },
-    // favItem(id) {
-    //   const vm = this;
-    //   const favId = vm.stared.indexOf(id);
-    //   if (favId === -1) {
-    //     vm.stared.push(id);
-    //   } else {
-    //     vm.stared.splice(favId, 1);
-    //   }
-    //   localStorage.setItem('stared', JSON.stringify(vm.stared));
-    // },
+
     addtoCart(id, qty = 1) {
-      this.$store.dispatch('cartModules/addtoCart', { id, qty });
+      const vm = this;
+      const target = vm.cart.carts.filter((items) => items.product_id === id);
+      if (target.length > 0) {
+        const sameCartItem = target[0];
+        const originQty = sameCartItem.qty;
+        const originCartId = sameCartItem.id;
+        const originProductId = sameCartItem.product.id;
+        const newQty = originQty + qty;
+        vm.$store.dispatch('cartModules/changeCartQty', { originCartId, originProductId, newQty });
+      } else {
+        vm.$store.dispatch('cartModules/addtoCart', { id, qty });
+      }
     },
     ...mapActions('productsModules', ['getProducts']),
   },
@@ -154,12 +156,14 @@ export default {
       return this.$store.state.cartModules.cartLoading.addCartLoading;
     },
     ...mapGetters('productsModules', ['products']),
+    ...mapGetters('cartModules', ['cart']),
+
   },
   created() {
     const vm = this;
-    this.productId = vm.$route.params.id;
-    this.getProduct(vm.productId);
-    this.getProducts();
+    vm.productId = vm.$route.params.id;
+    vm.getProduct(vm.productId);
+    vm.getProducts();
   },
   watch: {
     // eslint-disable-next-line func-names

@@ -46,6 +46,20 @@ export default {
         context.dispatch('updateMessage', { message: '購物車新增成功', status: 'success' });
       });
     },
+    changeCartQty(context, { originCartId, originProductId, newQty }) {
+      context.commit('LOADING', true, { root: true });
+      const addapi = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart`;
+      const delapi = `${process.env.VUE_APP_APIPATH}/api/${process.env.VUE_APP_CUSTOMPATH}/cart/${originCartId}`;
+      const changeCart = {
+        product_id: originProductId,
+        qty: newQty,
+      };
+      axios.all([axios.delete(delapi), axios.post(addapi, { data: changeCart })])
+        .then(axios.spread(() => {
+          context.dispatch('getCart');
+          context.commit('LOADING', false, { root: true });
+        }));
+    },
     updateMessage(context, { message, status }) {
       const timestamp = Math.floor(new Date() / 1000);
       context.commit('MESSAGES', { message, status, timestamp });

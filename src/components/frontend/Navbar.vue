@@ -23,7 +23,7 @@
           </li>
           <li class="nav-item">
             <router-link class="nav-link" active-class="active" to="/brand"
-              >品牌介紹</router-link
+              >認識腕表</router-link
             >
           </li>
           <li class="nav-item">
@@ -49,7 +49,7 @@ export default {
 </script>
 <style lang="scss">
 .logo-font {
-font-family: Caveat, cursive;
+font-family: Cabin, sans-serif;
 font-size: 25px;
 }
 </style>
