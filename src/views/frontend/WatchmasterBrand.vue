@@ -234,70 +234,139 @@
         </div>
         <h3 class="text-center mt-4">品牌介紹</h3>
         <hr />
-        <div class="row">
-          <div class="col-md-6 col-12 recommend-card px-0">
-            <div
-              class="recommend-img"
-              style="
-                background-image: url(https://upload.cc/i1/2020/10/23/djGwsK.jpg);
-              "
-            >
-              <a
-                href=""
-                class="recommend-cover px-0"
-                @click.prevent="$router.push(`/brand/rolex`)"
+        <div class="container d-md-block d-none">
+          <div class="row">
+            <div class="col-md-6 recommend-card px-md-0">
+              <div
+                class="recommend-img"
+                style="
+                  background-image: url(https://upload.cc/i1/2020/10/23/djGwsK.jpg);
+                "
               >
-                <div class="recommend-btn">See More</div>
-              </a>
+                <a
+                  href=""
+                  class="recommend-cover"
+                  @click.prevent="$router.push(`/brand/rolex`)"
+                >
+                  <div class="recommend-btn">See More</div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 recommend-card px-md-0">
+              <div
+                class="recommend-img"
+                style="
+                  background-image: url(https://upload.cc/i1/2020/10/23/oszAQj.jpg);
+                "
+              >
+                <a
+                  href=""
+                  class="recommend-cover"
+                  @click.prevent="$router.push(`/brand/omega`)"
+                >
+                  <div class="recommend-btn">See More</div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 recommend-card px-md-0">
+              <div
+                class="recommend-img"
+                style="
+                  background-image: url(https://upload.cc/i1/2020/10/23/vg34Op.jpg);
+                "
+              >
+                <a
+                  href=""
+                  class="recommend-cover"
+                  @click.prevent="$router.push(`/brand/iwc`)"
+                >
+                  <div class="recommend-btn">See More</div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 recommend-card px-md-0">
+              <div
+                class="recommend-img"
+                style="
+                  background-image: url(https://upload.cc/i1/2020/10/23/lA0gz9.jpg);
+                  background-size: auto;
+                "
+              >
+                <a
+                  href=""
+                  class="recommend-cover"
+                  @click.prevent="$router.push(`/brand/gs`)"
+                >
+                  <div class="recommend-btn">See More</div>
+                </a>
+              </div>
             </div>
           </div>
-          <div class="col-md-6 col-12 recommend-card px-0">
-            <div
-              class="recommend-img"
-              style="
-                background-image: url(https://upload.cc/i1/2020/10/23/oszAQj.jpg);
-              "
-            >
-              <a
-                href=""
-                class="recommend-cover"
-                @click.prevent="$router.push(`/brand/omega`)"
+        </div>
+        <div class="container d-block d-md-none">
+          <div class="row">
+            <div class="col-12 recommend-card px-0">
+              <div
+                class="recommend-img"
+                style="
+                  background-image: url(https://i.pinimg.com/originals/c3/af/ba/c3afba827e7299415cb7034e00bc9533.jpg);
+                "
               >
-                <div class="recommend-btn">See More</div>
-              </a>
+                <a
+                  href=""
+                  class="recommend-cover"
+                  @click.prevent="$router.push(`/brand/rolex`)"
+                >
+                  <div class="recommend-btn">See More</div>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-md-6 col-12 recommend-card px-0">
-            <div
-              class="recommend-img"
-              style="
-                background-image: url(https://upload.cc/i1/2020/10/23/vg34Op.jpg);
-              "
-            >
-              <a
-                href=""
-                class="recommend-cover"
-                @click.prevent="$router.push(`/brand/iwc`)"
+            <div class="col-12 recommend-card px-0">
+              <div
+                class="recommend-img"
+                style="
+                  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToN3nC6ShW2p-H8y85KK6Aaz2Psg5lL5OQaA&usqp=CAU);
+                "
               >
-                <div class="recommend-btn">See More</div>
-              </a>
+                <a
+                  href=""
+                  class="recommend-cover"
+                  @click.prevent="$router.push(`/brand/omega`)"
+                >
+                  <div class="recommend-btn">See More</div>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-md-6 col-12 recommend-card px-0">
-            <div
-              class="recommend-img"
-              style="
-                background-image: url(https://upload.cc/i1/2020/10/23/lA0gz9.jpg);
-                background-size: auto;
-              "
-            >
-              <a
-                href=""
-                class="recommend-cover"
-                @click.prevent="$router.push(`/brand/gs`)"
+            <div class="col-12 recommend-card px-0">
+              <div
+                class="recommend-img"
+                style="
+                  background-image: url(https://cdn.freebiesupply.com/logos/thumbs/2x/iwc-schaffhausen-logo.png);
+                "
               >
-                <div class="recommend-btn">See More</div>
-              </a>
+                <a
+                  href=""
+                  class="recommend-cover"
+                  @click.prevent="$router.push(`/brand/iwc`)"
+                >
+                  <div class="recommend-btn">See More</div>
+                </a>
+              </div>
+            </div>
+            <div class="col-12 recommend-card px-0">
+              <div
+                class="recommend-img"
+                style="
+                  background-image: url(https://storage.seikowatches.com/production/images/2018/03/thumbnail_14145316810840.jpg);"
+              >
+                <a
+                  href=""
+                  class="recommend-cover"
+                  @click.prevent="$router.push(`/brand/gs`)"
+                >
+                  <div class="recommend-btn">See More</div>
+                </a>
+              </div>
             </div>
           </div>
         </div>

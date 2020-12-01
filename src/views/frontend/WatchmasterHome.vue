@@ -12,13 +12,13 @@
           "
         >
           <div class="header-button header-button1 mb-md-0">
+            <p class="text-white h3">快來體驗腕表的魅力吧!</p>
             <button
               class="btn btn-secondary px-5 py-3 mb-2"
               @click="$router.push(`/product`)"
             >
               馬上去看看
             </button>
-            <p class="text-white h3">快來體驗腕表的魅力吧!</p>
           </div>
         </div>
       </swiper-slide>
@@ -31,13 +31,13 @@
           "
         >
           <div class="header-button header-button2 mb-md-0">
+            <p class="text-white h3">還不馬上來試戴!</p>
             <button
               class="btn btn-secondary px-5 py-3 mb-2"
               @click="$router.push(`/product`)"
             >
               馬上去看看
             </button>
-            <p class="text-white h3">還不馬上來試戴!</p>
           </div>
         </div></swiper-slide
       >
@@ -50,13 +50,13 @@
           "
         >
           <div class="header-button header-button3">
+            <p class="text-white h3">來認識腕表吧!</p>
             <button
               class="btn btn-secondary px-5 py-3 mb-2"
               @click="$router.push(`/brand`)"
             >
               馬上去看看
             </button>
-            <p class="text-white h3">來認識腕表吧!</p>
           </div>
         </div></swiper-slide
       >

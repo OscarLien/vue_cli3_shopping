@@ -10,18 +10,18 @@
 .header {
   display: flex;
   height: 550px;
-  .header-button{
+  .header-button {
     text-align: center;
     margin-bottom: 3rem;
   }
-  @media screen and (min-width:576px){
+  @media screen and (min-width: 576px) {
     .header-button1 {
       padding-right: 10rem;
     }
     .header-button2 {
       padding-left: 10rem;
     }
-    .header-button3{
+    .header-button3 {
       margin-bottom: 3rem;
     }
   }
@@ -35,4 +35,7 @@
 .feature-text {
   font-size: 1.25rem;
   line-height: 28px;
+  @media screen and (max-width: 576px) {
+    font-size: 16px;
+  }
 }

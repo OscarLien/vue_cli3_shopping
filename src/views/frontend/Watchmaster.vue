@@ -4,9 +4,9 @@
     <Alert></Alert>
     <Coupon></Coupon>
     <div class="container-fluid content px-0 px-md-0">
-          <router-view></router-view>
+      <router-view></router-view>
     </div>
-    <Sidebutton></Sidebutton>
+    <Sidebutton :class="{hideCart:hide}"></Sidebutton>
     <Footer></Footer>
   </div>
 </template>
@@ -20,6 +20,11 @@ import Sidebutton from '@/components/frontend/Sidebutton.vue';
 import Alert from '@/components/AlertMessage.vue';
 
 export default {
+  data() {
+    return {
+      hide: false,
+    };
+  },
   components: {
     Navbar,
     Footer,
@@ -27,5 +32,33 @@ export default {
     Sidebutton,
     Alert,
   },
+  methods: {
+    hideCart() {
+      const vm = this;
+      if (vm.$route.name === 'Checkout' || vm.$route.name === 'Payment') {
+        vm.hide = true;
+      }
+    },
+  },
+  watch: {
+    $route(newUrl) {
+      const vm = this;
+      if (newUrl.name === 'Checkout' || newUrl.name === 'Payment') {
+        vm.hide = true;
+      } else {
+        vm.hide = false;
+      }
+    },
+  },
+  created() {
+    const vm = this;
+    vm.hideCart();
+  },
 };
 </script>
+
+<style lang="scss">
+.hideCart{
+  display: none;
+}
+</style>

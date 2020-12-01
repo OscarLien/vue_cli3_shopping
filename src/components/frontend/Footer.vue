@@ -2,8 +2,7 @@
   <div>
     <!--訂閱-->
     <footer >
-      <section class="py-4 bg-secondary">
-        <div class="container px-0">
+      <section class="container-fluid py-4 bg-secondary">
           <div class="row justify-content-center">
             <div
               class="col-md-5 d-flex align-items-center
@@ -27,7 +26,6 @@
               </div>
             </div>
           </div>
-        </div>
       </section>
       <div class="bg-primary">
         <div class="container-fluid pt-3">
@@ -35,8 +33,8 @@
                         <div class="col-md-4 d-flex flex-column text-center">
               <h5>聯絡我們</h5>
               <ul class="list-unstyled">
-                <li><a href="tel:+" class="text-white">TEL : 0123456789</a></li>
-                <li><a href="mailto:" class="text-white">Email : watchmaster@mail.com</a></li>
+                <li>TEL: <a href="tel:+" class="text-white">0123456789</a></li>
+                <li>Email: <a href="mailto:" class="text-white">watchmaster@mail.com</a></li>
                 <li>地址： 地球上的某一個角落</li>
               </ul>
             </div>

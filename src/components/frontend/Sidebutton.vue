@@ -53,7 +53,7 @@
                 <thead>
                   <th></th>
                   <th>品名</th>
-                  <th>數量</th>
+                  <th width="60px">數量</th>
                   <th>單價</th>
                 </thead>
                 <tbody>

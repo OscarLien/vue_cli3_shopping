@@ -31,52 +31,54 @@
               1905年，年僅24歲的他便於倫敦創辦了自己的企業，名為“威爾斯多夫及戴維公司”(
               Wilsdorf and Davis
               )，是一家主要負責銷售手錶的公司，但他也研發自製手錶。
-            <br/>
-            <br/>
+              <br />
+              <br />
               1908年7月2日上午8時，勞力士( Rolex
               )商標正式註冊。第一批勞力士表因它高超的技術質量而立即受到重視。一隻小型勞力士表於1914年得到喬城天文台(
               Kew Observatory )的 A
               級證書，這是英國這一知名天文台從未頒發過的最高評價。它的精確度得到了承認，這是世界性的大事，
               使手錶在歐洲和美國頓時身價倍增。從此，勞力士的質量即代表了精確。
-            <br/>
-            <br/>
+              <br />
+              <br />
               第一次大戰後勞力士遷回日內瓦，在創始人的推動下，勞力士公司不斷創新、創造，完善自己。它的研究方向有兩個：防水與自動。
-            <br/>
-            <br/>
+              <br />
+              <br />
               1926年，勞力士創制了首款能防水、防塵的腕錶，這就是著名的“蠔”(
               Oyster )式腕錶。蠔式腕錶配備密閉的錶殼，為機芯提供最佳的保護。
               1927年，有名英國游泳女將美雪狄絲戴著這種防水錶橫渡英吉利海峽，那隻手錶在水中整整浸泡了15個小時後，仍舊分秒不差，完好無損。
               當時的英國《每日郵報》消息稱這一事件“發明了難以實現的奇蹟”，是“製表技巧最巨大的成功”。
               事實上，這一事件也成為勞力士一次經典的事件營銷，從此，勞力士“蠔式”防水錶名聞天下。
-            <br/>
-            <br/>
+              <br />
+              <br />
               1929年的經濟危機打擊了瑞士，但勞力士卻沒受影響。它在這一時期發明了一種自動上煉的機制，造出了後來風靡一時的“恆動”(
               Perpetual )型表。
               這種自動表擁有一種擺陀，之前在手錶上從未用過，它給鐘錶業帶來了一場革命，它是目前所有自動表的先驅。
-            <br/>
-            <br/>
+              <br />
+              <br />
               1945年，勞力士創造了世界上首款可以主動轉換日期的萬年曆表；1955年，勞力士研製出了飛行員手錶，使佩戴者能夠在不同時區準確計時；
               同年，勞力士又創造了深海應用的潛水錶，潛水錶可潛入水下100米正常運轉；1956年又推出了具備星期顯示功效的日曆表，並有26國文字可供選擇。
-            <br/>
-            <br/>
+              <br />
+              <br />
               勞力士能在今天的世界表壇享有盛名，與安德烈·海尼格( Andre J.
               Heiniger
               )的靈感和熱情分不開。威爾斯多夫在1948年邀請海尼格加入勞力士工作。他在布宜諾斯艾利斯工作了六年，負責開發市場。
               1955年返回日內瓦，晉升為勞力士董事會成員，1964年起取代威爾斯多夫成為勞力士公司總經理。
-            <br/>
-            <br/>
+              <br />
+              <br />
               他忠實地繼承勞力士創始人的事業，不斷提高質量和技術革新，為企業帶來了新的氣息：國際化。海尼格跑遍世界各個角落，開拓新市場，他有著驚人的預測力，
               決定在各大洲的主要城市建立分公司，這在當時是個創舉。
-            <br/>
-            <br/>
+              <br />
+              <br />
               經過一個世紀的發展，總部設在日內瓦的勞力士公司已擁有19個分公司，在世界主要的大都市有24個規模頗大的服務中心，年產手錶45萬隻左右，
               成為市場佔有量甚大的名牌手錶之一。該企業品牌在世界品牌實驗室（
               World Brand Lab
               ）編制的2006年度《世界品牌500強》排行榜中名列第七十九。
-            <br/>
-            <br/>
+              <br />
+              <br />
               2008年12月30日，世界權威的品牌價值研究機構——世界品牌價值實驗室舉辦的“2008世界品牌價值實驗室年度大獎”評選活動中，
               Rolex勞力士憑藉良好的品牌印象和品牌活力，榮登“中國最具競爭力品牌榜單”大獎，贏得廣大消費者普遍讚譽。
+            </p>
+
             <h2 class="brand-title mt-3">品牌特色</h2>
             <p class="brand-text">
               勞力士手錶“穩重、適用、不顯浮華”的設計作風，備受人們推重，而精確和耐用性更使勞力士身價不凡。勞力士每位鐘錶技師均抱有同一信心，
@@ -84,6 +86,72 @@
               完成所有質量測試的表才可以出廠。勞力士人精益求精、對完美的執著追求也賦予了勞力士表最高的品質，使勞力士享有其它品牌所無可比較的榮譽。
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h1 class="text-center py-3 commentTitle">看看他們怎麼說...</h1>
+      <div class="card-columns">
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1595570981097-e72c1af177e2?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=633&q=80"
+            class="card-img-top"
+            alt="watch picture"
+          />
+          <div class="card-body">
+            <h5 class="card-title">一勞永逸</h5>
+            <p class="card-text">一勞永逸，買買買~</p>
+          </div>
+        </div>
+        <div class="card p-3">
+          <blockquote class="blockquote mb-0 card-body">
+            <p>一勞永逸，能者多勞</p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                錶友 <cite title="Source Title">watchLover</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1585123413507-d9a511e7a89c?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=675&q=80"
+            class="card-img-top"
+            alt="watch picture"
+          />
+          <div class="card-body">
+            <h5 class="card-title">為了能上勞，只能騎腳踏車了</h5>
+            <p class="card-text">再多的辛苦都是值得的!</p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">買不到</h5>
+            <p class="card-text">
+              買不到買不到買不到買不到買不到買不到
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1586020062350-8d41ee2d19aa?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80" class="card-img-top" alt="watch picture"/>
+        </div>
+        <div class="card p-3 text-right">
+          <blockquote class="blockquote mb-0">
+            <p>
+              我看了看我的勞力士，不是為了看時間，而是想不經意，想讓你知道我是個土豪。
+            </p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                錶友<cite title="Source Title">Oscar</cite>
+              </small>
+            </footer>
+          </blockquote>
         </div>
       </div>
     </div>

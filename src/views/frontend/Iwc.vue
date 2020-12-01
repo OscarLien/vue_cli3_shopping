@@ -64,6 +64,71 @@
         </div>
       </div>
     </div>
+    <div class="container">
+      <h1 class="text-center py-3 commentTitle">看看他們怎麼說...</h1>
+      <div class="card-columns">
+        <div class="card">
+          <img
+            src="https://attach.mobile01.com/attach/201803/mobile01-ec9acc46883d1e3fa8295ca2b3118d2c.jpg"
+            class="card-img-top"
+            alt="watch picture"
+          />
+          <div class="card-body">
+            <h5 class="card-title">IWC 美錶</h5>
+            <p class="card-text"></p>
+          </div>
+        </div>
+        <div class="card p-3">
+          <blockquote class="blockquote mb-0 card-body">
+            <p>最喜歡的牌子</p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                錶友 <cite title="Source Title">watchLover5487</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>
+        <div class="card text-center">
+          <div class="card-body">
+            <h5 class="card-title">妖瘦讚</h5>
+            <p class="card-text">
+              妖瘦讚妖瘦讚妖瘦讚
+            </p>
+            <p class="card-text">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src="https://images.unsplash.com/photo-1486490686828-196042a38646?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80"
+            class="card-img-top"
+            alt="watch picture"
+          />
+          <div class="card-body">
+            <h5 class="card-title">一輩子一定要擁有的品味質感</h5>
+            <p class="card-text">
+              <small class="text-muted">Last updated 6 mins ago</small>
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://farm9.static.flickr.com/8835/28726940111_1290b38bac_o.jpg" class="card-img-top" alt="watch picture" />
+        </div>
+        <div class="card p-3 text-right">
+          <blockquote class="blockquote mb-0">
+            <p>
+              IWC > 所有
+            </p>
+            <footer class="blockquote-footer">
+              <small class="text-muted">
+                錶友<cite title="Source Title">aaa</cite>
+              </small>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

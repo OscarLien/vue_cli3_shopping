@@ -50,3 +50,24 @@
     opacity: 1;
   }
 }
+.commentTitle {
+  position: relative;
+}
+.commentTitle:after,
+.commentTitle:before {
+  content: "";
+  height: 3px;
+  background: $primary;
+  top: 50%;
+  width: 12%;
+  position: absolute;
+  @media screen and (max-width:992px) {
+    display: none;
+  }
+}
+.commentTitle:before {
+  left: 21%;
+}
+.commentTitle:after {
+  right: 21%;
+}
