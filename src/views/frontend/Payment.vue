@@ -27,7 +27,7 @@
           <table class="table">
             <thead>
               <th scope="col">品名</th>
-              <th scope="col">數量</th>
+              <th scope="col" class="text-nowrap">數量</th>
               <th scope="col">單價</th>
             </thead>
             <tbody>
