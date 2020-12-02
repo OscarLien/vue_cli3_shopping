@@ -38,7 +38,7 @@
         <div class="my-5 row justify-content-center">
           <div class="col-12 col-md-8">
             <h2 class="text-center mb-3">訂購資訊</h2>
-            <table class="table table-responsive">
+            <table class="table">
               <thead>
                 <th></th>
                 <th scope="col" class="text-nowrap">品名</th>
