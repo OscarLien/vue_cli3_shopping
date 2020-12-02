@@ -129,7 +129,7 @@
                 <div class="card-header" id="headingFour">
                   <h2 class="mb-0">
                     <button
-                      class="btn btn-link text-left btn-block collapsed"
+                      class="btn btn-link text-left btn-block collapsed text-nowrap"
                       type="button"
                       data-toggle="collapse"
                       data-target="#collapseFour"
@@ -160,7 +160,7 @@
                 <div class="card-header" id="heading">
                   <h2 class="mb-0">
                     <button
-                      class="btn btn-link text-left btn-block collapsed"
+                      class="btn btn-link text-left btn-block collapsed text-nowrap"
                       type="button"
                       data-toggle="collapse"
                       data-target="#collapseFive"

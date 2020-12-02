@@ -26,9 +26,9 @@
           <h2 class="text-center">確認訂購資料</h2>
           <table class="table">
             <thead>
-              <th>品名</th>
-              <th>數量</th>
-              <th>單價</th>
+              <th scope="col">品名</th>
+              <th scope="col">數量</th>
+              <th scope="col">單價</th>
             </thead>
             <tbody>
               <tr v-for="item in order.products" :key="item.id">

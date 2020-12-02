@@ -49,12 +49,12 @@
               </button>
             </div>
             <div v-if="cart.total !== 0">
-              <table class="table">
+              <table class="table table-responsive">
                 <thead>
                   <th></th>
-                  <th>品名</th>
-                  <th width="60px">數量</th>
-                  <th>單價</th>
+                  <th scope="col">品名</th>
+                  <th scope="col" class="text-nowrap">數量</th>
+                  <th scope="col">單價</th>
                 </thead>
                 <tbody>
                   <tr v-for="item in cart.carts" :key="item.id">
@@ -67,7 +67,7 @@
                       </button>
                     </td>
                     <td>{{ item.product.title }}</td>
-                    <td>{{ item.qty }}{{ item.product.unit }}</td>
+                    <td class="text-nowrap">{{ item.qty }}{{ item.product.unit }}</td>
                     <td>{{ item.final_total | currency }}</td>
                   </tr>
                 </tbody>

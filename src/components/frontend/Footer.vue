@@ -1,12 +1,13 @@
 <template>
   <div>
     <!--訂閱-->
-    <footer >
+    <footer>
       <section class="container-fluid py-4 bg-secondary">
+        <div class="container">
           <div class="row justify-content-center">
             <div
-              class="col-md-5 d-flex align-items-center
-              justify-content-md-start justify-content-center mb-4 mb-md-0 mr-auto"
+              class="col-md-5 d-flex align-items-center justify-content-md-start
+              justify-content-center mb-4 mb-md-0 mr-auto"
             >
               <span class="h4 text-white">訂閱我們取得最新商品販售資訊</span>
             </div>
@@ -26,15 +27,19 @@
               </div>
             </div>
           </div>
+        </div>
       </section>
       <div class="bg-primary">
         <div class="container-fluid pt-3">
           <div class="row text-white justify-content-center">
-                        <div class="col-md-4 d-flex flex-column text-center">
+            <div class="col-md-4 d-flex flex-column text-center">
               <h5>聯絡我們</h5>
               <ul class="list-unstyled">
                 <li>TEL: <a href="tel:+" class="text-white">0123456789</a></li>
-                <li>Email: <a href="mailto:" class="text-white">watchmaster@mail.com</a></li>
+                <li>
+                  Email:
+                  <a href="mailto:" class="text-white">watchmaster@mail.com</a>
+                </li>
                 <li>地址： 地球上的某一個角落</li>
               </ul>
             </div>
@@ -49,22 +54,23 @@
 
             <div class="col-md-4 text-center">
               <h5 class="mb-3">關注我們</h5>
-              <a href="" class="text-white "
+              <a href="" class="text-white"
                 ><i class="fab fa-facebook-square fa-2x mr-3 mb-2"></i
               ></a>
               <a href="#" class="text-white"
                 ><i class="fab fa-twitter fa-2x mb-2"></i
               ></a>
-              <br>
+              <br />
               <a href="#" class="text-white"
                 ><i class="fas fa-envelope-open fa-2x mr-3"></i
               ></a>
               <router-link class="text-white" to="/login"
-                ><i class="fas fa-tools fa-2x "></i
+                ><i class="fas fa-tools fa-2x"></i
               ></router-link>
             </div>
             <div class="col-md-12 text-center py-2">
-              僅做為個人學習使用，非商業用途。 @ 2020 Watch Master* All Rights Reserved
+              僅做為個人學習使用，非商業用途。 @ 2020 Watch Master* All Rights
+              Reserved
             </div>
           </div>
         </div>

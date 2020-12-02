@@ -21,8 +21,7 @@
           <div class="col-12 col-md-8 px-0">
             <ul class="list-unstyled d-flex justify-content-around">
               <li class="checkStep checkStepActive">
-                <span class=" text-center">
-                  1. 填寫訂購資料</span>
+                <span class="text-center"> 1. 填寫訂購資料</span>
               </li>
               <li class="checkStep">
                 <span class="text-center">2. 確認付款</span>
@@ -39,12 +38,12 @@
         <div class="my-5 row justify-content-center">
           <div class="col-12 col-md-8">
             <h2 class="text-center mb-3">訂購資訊</h2>
-            <table class="table">
+            <table class="table table-responsive">
               <thead>
                 <th></th>
-                <th>品名</th>
-                <th width="90px">數量</th>
-                <th>單價</th>
+                <th scope="col" class="text-nowrap">品名</th>
+                <th scope="col" class="text-nowrap">數量</th>
+                <th scope="col">單價</th>
               </thead>
               <tbody>
                 <tr v-for="item in cart.carts" :key="item.id">
@@ -63,10 +62,16 @@
                       已套用優惠券
                     </div>
                   </td>
-                  <td class="align-middle">
-                    <select name="" id="" v-model="item.qty"
-                    @change="changeQty(item.id, item.product.id, item.qty)" >
-                      <option :value="num" v-for="num in 10" :key="num">{{num}}</option>
+                  <td class="align-middle text-nowrap">
+                    <select
+                      name=""
+                      id=""
+                      v-model="item.qty"
+                      @change="changeQty(item.id, item.product.id, item.qty)"
+                    >
+                      <option :value="num" v-for="num in 10" :key="num">
+                        {{ num }}
+                      </option>
                     </select>
                     {{ item.product.unit }}
                     <!-- {{ item.qty }}/{{ item.product.unit }} -->
@@ -113,7 +118,9 @@
             <div class="form-row">
               <form class="col-12" @submit.prevent="handleSubmit(createOrder)">
                 <div class="form-group">
-                  <label for="email">電子郵件<span class="text-danger">*必填</span></label>
+                  <label for="email"
+                    >電子郵件<span class="text-danger">*必填</span></label
+                  >
                   <ValidationProvider
                     name="email"
                     rules="required"
@@ -133,7 +140,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="name">姓名<span class="text-danger">*必填</span></label>
+                  <label for="name"
+                    >姓名<span class="text-danger">*必填</span></label
+                  >
                   <ValidationProvider
                     name="name"
                     rules="required"
@@ -153,7 +162,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="tel">電話<span class="text-danger">*必填</span></label>
+                  <label for="tel"
+                    >電話<span class="text-danger">*必填</span></label
+                  >
                   <ValidationProvider
                     name="tel"
                     rules="required"
@@ -172,7 +183,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="address">地址<span class="text-danger">*必填</span></label>
+                  <label for="address"
+                    >地址<span class="text-danger">*必填</span></label
+                  >
                   <ValidationProvider
                     name="address"
                     rules="required"
@@ -243,10 +256,16 @@ export default {
       };
       vm.$http.post(api, { data: coupon }).then((response) => {
         if (response.data.success) {
-          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
+          vm.$store.dispatch('cartModules/updateMessage', {
+            message: response.data.message,
+            status: 'success',
+          });
           vm.getCart();
         } else {
-          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'danger' });
+          vm.$store.dispatch('cartModules/updateMessage', {
+            message: response.data.message,
+            status: 'danger',
+          });
         }
       });
     },
@@ -257,7 +276,10 @@ export default {
       vm.isLoading = true;
       vm.$http.post(api, { data: order }).then((response) => {
         if (response.data.success) {
-          vm.$store.dispatch('cartModules/updateMessage', { message: response.data.message, status: 'success' });
+          vm.$store.dispatch('cartModules/updateMessage', {
+            message: response.data.message,
+            status: 'success',
+          });
           vm.$router.push(`/payment/${response.data.orderId}`);
           vm.$store.dispatch('cartModules/getCart');
           vm.isLoading = false;
@@ -272,10 +294,13 @@ export default {
         product_id: productId,
         qty,
       };
-      vm.$http.all([vm.$http.delete(delapi), vm.$http.post(addapi, { data: cart })])
-        .then(vm.$http.spread(() => {
-          vm.getCart();
-        }));
+      vm.$http
+        .all([vm.$http.delete(delapi), vm.$http.post(addapi, { data: cart })])
+        .then(
+          vm.$http.spread(() => {
+            vm.getCart();
+          }),
+        );
     },
     ...mapActions('cartModules', ['getCart', 'delCart']),
   },
