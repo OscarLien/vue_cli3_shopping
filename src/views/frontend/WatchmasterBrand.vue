@@ -139,9 +139,7 @@
                       @click="changestyle"
                     >
                       <i class="far fa-question-circle fa-2x"></i
-                      ><span class="ml-2"
-                        >機械錶的誤差在多少內才算正常呢？</span
-                      >
+                      ><span class="ml-2">機械錶的誤差在多少內才算正常呢？</span>
                     </button>
                   </h2>
                 </div>
@@ -357,7 +355,8 @@
               <div
                 class="recommend-img"
                 style="
-                  background-image: url(https://storage.seikowatches.com/production/images/2018/03/thumbnail_14145316810840.jpg);"
+                  background-image: url(https://storage.seikowatches.com/production/images/2018/03/thumbnail_14145316810840.jpg);
+                "
               >
                 <a
                   href=""
