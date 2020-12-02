@@ -139,7 +139,9 @@
                       @click="changestyle"
                     >
                       <i class="far fa-question-circle fa-2x"></i
-                      ><span class="ml-2">機械錶的誤差在多少內才算正常呢？</span>
+                      ><span class="ml-2"
+                        >機械錶的誤差在多少內才算正常呢？</span
+                      >
                     </button>
                   </h2>
                 </div>
