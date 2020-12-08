@@ -9,7 +9,7 @@
               class="col-md-5 d-flex align-items-center justify-content-md-start
               justify-content-center mb-4 mb-md-0 mr-auto"
             >
-              <span class="h4 text-white">訂閱我們取得最新商品販售資訊</span>
+              <span class="h4 text-white">訂閱我們取得最新商品資訊</span>
             </div>
             <div class="col-md-5">
               <div
